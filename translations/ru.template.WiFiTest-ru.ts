@@ -4,23 +4,29 @@
 <context>
     <name>WiFiTest</name>
     <message>
-        <location filename="../qml/WiFiTest.qml" line="18"/>
-        <location filename="../qml/WiFiTest.qml" line="28"/>
-        <source>SSID: </source>
+        <location filename="../qml/WiFiTest.qml" line="19"/>
+        <location filename="../qml/WiFiTest.qml" line="27"/>
+        <source>BSSID: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/WiFiTest.qml" line="36"/>
-        <source>Узнать SSID</source>
+        <location filename="../qml/WiFiTest.qml" line="22"/>
+        <location filename="../qml/WiFiTest.qml" line="30"/>
+        <source>(unknown)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/WiFiTest.qml" line="41"/>
+        <location filename="../qml/WiFiTest.qml" line="35"/>
+        <source>Получить BSSID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/WiFiTest.qml" line="40"/>
         <source>Запомнить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/WiFiTest.qml" line="46"/>
+        <location filename="../qml/WiFiTest.qml" line="45"/>
         <source>Проверить</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30,7 +36,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/WiFiTest.qml" line="49"/>
+        <location filename="../qml/WiFiTest.qml" line="50"/>
         <source>Не совпадает</source>
         <translation type="unfinished"></translation>
     </message>

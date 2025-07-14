@@ -11,3 +11,4 @@ Permissions=DeviceInfo;Internet
 OrganizationName=ru.template
 ApplicationName=WiFiTest
 ExecDBus=/usr/bin/ru.template.WiFiTest
+

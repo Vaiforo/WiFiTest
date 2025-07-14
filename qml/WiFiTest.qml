@@ -9,53 +9,54 @@ ApplicationWindow {
                 anchors.centerIn: parent
                 spacing: Theme.paddingLarge
 
-                WiFiSSID {
-                    id: wifi
-                }
+                WiFiBSSID { id: wifi }
 
                 Label {
                     id: currentLabel
-                    text: qsTr("SSID: ") + (wifi.currentSSID.length > 0
-                                            ? wifi.currentSSID
-                                            : "(неизвестно)")
-                    horizontalAlignment: Text.AlignHCenter
                     width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
+                    text: qsTr("BSSID: ") +
+                          (wifi.currentBSSID.length > 0
+                           ? wifi.currentBSSID
+                           : qsTr("(unknown)"))
 
                     Connections {
                         target: wifi
-                        onCurrentSSIDChanged: {
-                            currentLabel.text = qsTr("SSID: ") + (wifi.currentSSID.length > 0
-                                                                  ? wifi.currentSSID
-                                                                  : "(неизвестно)")
-                        }
+                        onCurrentBSSIDChanged: currentLabel.text =
+                            qsTr("BSSID: ") +
+                            (wifi.currentBSSID.length > 0
+                             ? wifi.currentBSSID
+                             : qsTr("(unknown)"))
                     }
                 }
 
                 Button {
-                    text: qsTr("Узнать SSID")
-                    onClicked: wifi.fetchCurrentSSID()
+                    text: qsTr("Получить BSSID")
+                    onClicked: wifi.fetchCurrentBSSID()
                 }
 
                 Button {
                     text: qsTr("Запомнить")
-                    onClicked: wifi.saveCurrentSSID()
+                    onClicked: wifi.saveCurrentBSSID()
                 }
 
                 Button {
                     text: qsTr("Проверить")
                     onClicked: {
-                        var match = wifi.checkSavedSSID();
-                        resultLabel.text = match ? qsTr("Совпадает") : qsTr("Не совпадает");
+                        var ok = wifi.checkSavedBSSID()
+                        resultLabel.text =
+                            ok ? qsTr("Совпадает")
+                               : qsTr("Не совпадает")
                     }
                 }
 
                 Label {
                     id: resultLabel
-                    text: ""
-                    font.bold: true
-                    horizontalAlignment: Text.AlignHCenter
                     width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    font.bold: true
+                    text: ""
                 }
             }
         }

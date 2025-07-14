@@ -1,27 +1,27 @@
 #pragma once
 #include <QObject>
 #include <QString>
-#include <QtDBus>
 
-class WiFiSSID : public QObject {
+class WiFiBSSID : public QObject {
     Q_OBJECT
-    Q_PROPERTY(QString currentSSID READ currentSSID NOTIFY currentSSIDChanged)
-    Q_PROPERTY(QString savedSSID READ savedSSID NOTIFY savedSSIDChanged)
+    Q_PROPERTY(QString currentBSSID READ currentBSSID NOTIFY currentBSSIDChanged)
+    Q_PROPERTY(QString savedBSSID   READ savedBSSID   NOTIFY savedBSSIDChanged)
+
 public:
-    explicit WiFiSSID(QObject *parent = nullptr) : QObject(parent) {}
+    explicit WiFiBSSID(QObject *parent = nullptr) : QObject(parent) {}
 
-    QString currentSSID() const { return m_currentSSID; }
-    QString savedSSID()   const { return m_savedSSID; }
+    QString currentBSSID() const { return m_currentBSSID; }
+    QString savedBSSID()   const { return m_savedBSSID;   }
 
-    Q_INVOKABLE void fetchCurrentSSID();
-    Q_INVOKABLE void saveCurrentSSID();
-    Q_INVOKABLE bool checkSavedSSID();
+    Q_INVOKABLE void fetchCurrentBSSID();
+    Q_INVOKABLE void saveCurrentBSSID();
+    Q_INVOKABLE bool checkSavedBSSID();
 
 signals:
-    void currentSSIDChanged();
-    void savedSSIDChanged();
+    void currentBSSIDChanged();
+    void savedBSSIDChanged();
 
 private:
-    QString m_currentSSID;
-    QString m_savedSSID;
+    QString m_currentBSSID;
+    QString m_savedBSSID;
 };
