@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.template.WiFiTest
+Exec=/usr/bin/ru.template.WiFiTest
+Name=WiFi
+Name[ru]=WiFiTest
+
+[X-Application]
+Permissions=DeviceInfo;Internet
+OrganizationName=ru.template
+ApplicationName=WiFiTest
+ExecDBus=/usr/bin/ru.template.WiFiTest
